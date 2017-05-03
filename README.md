@@ -1,8 +1,8 @@
 # Epicodus Pig Latin Translator
-### Jared Luedtke and Kristen McKee 04.28.17
+### Jared Luedtke and Kristen McKee 05.03.17
 
 ## Description
-This website will inform you if an inputted year is considered to be a leap year.
+This website will translate your word or sentence into Pig Latin.
 ## Setup
 1. Clone this repository.
 2. Execute the file called "index.html".
