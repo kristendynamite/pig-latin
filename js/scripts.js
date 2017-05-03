@@ -1,7 +1,11 @@
 //////////// Business Logic! /////////////
-var vowel = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 
-var translate = function(textArray) {
+
+var translate = function(sentenceArray) {
+  var newArray = [];
+  for (var i = 0; i < sentenceArray.length; i++) {
+    var textArray = sentenceArray[i].split("");
+
   if (textArray.length === 1) {
     console.log("That was a one letter word")
   } else if ((textArray[0] === "a") || (textArray[0] === "e") || (textArray[0] === "i") || (textArray[0] === "o") || (textArray[0] === "u")) {
@@ -30,10 +34,14 @@ var translate = function(textArray) {
           textArray.shift();
         }
     }
+
   };
 
   textArray.push("ay");
-  return textArray.join("");
+  var str = textArray.join("");
+  newArray.push(str);
+};
+return newArray.join(" ");
 };
 
 
@@ -42,10 +50,11 @@ $(function() {
   $(".formOne").submit(function(event) {
     event.preventDefault();
     var text = $("#english").val().toLowerCase();
-    var textArray = text.split("");
-    var result = translate(textArray);
+    var sentenceArray = text.split(" ");
+    // var textArray = text.split(" ");
+    var result = translate(sentenceArray);
     $("#pigLatin").text(result);
-    console.log(textArray);
+    console.log(newArray);
   });
 });
 
@@ -61,4 +70,10 @@ $(function() {
 //   if (vowel.includes(textArray[i])) {
 //     textArray.push("ay");
 //   }
+// };
+
+// var sentence = function() {
+//   for (var i = 0; i < textArray.length; i++) {
+//     translate(textArray[i]);
+//   };
 // };
